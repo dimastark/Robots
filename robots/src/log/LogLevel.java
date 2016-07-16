@@ -1,7 +1,8 @@
 package log;
 
-public enum LogLevel
-{
+import java.io.Serializable;
+
+public enum LogLevel implements Serializable {
     Trace(0),
     Debug(1),
     Info(2),
@@ -9,16 +10,14 @@ public enum LogLevel
     Error(4),
     Fatal(5);
     
-    private int m_iLevel;
+    private int iLevel;
     
-    private LogLevel(int iLevel)
-    {
-        m_iLevel = iLevel;
+    LogLevel(int iLevel) {
+        this.iLevel = iLevel;
     }
     
-    public int level()
-    {
-        return m_iLevel;
+    public int level() {
+        return iLevel;
     }
 }
 
